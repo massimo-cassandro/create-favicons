@@ -1,0 +1,14 @@
+2023-05-27T17:50:06.523Z |            1.0.0 | create-favicons
+2023-05-27T17:53:56.680Z |            1.0.1 | fix
+2023-05-29T10:15:31.419Z |            1.0.2 | create-favicon: init option
+2023-05-29T10:31:21.507Z |            1.0.3 | create-favicons: multi set
+2023-05-29T10:38:09.535Z |            1.0.4 | fix create-favicon shebang
+2023-05-29T13:39:40.036Z |            1.0.5 | create-favicons fix
+2023-05-29T14:31:22.411Z |            1.0.6 | create-favicons: opzione `null` per snippet file
+2023-05-30T09:17:02.151Z |            1.0.7 | Create-favicons: personalizzazione parametri output
+2023-05-30T10:20:45.158Z |            1.0.8 | create-favicons: defaults update
+2023-05-30T10:40:19.709Z |            1.0.9 | create-favicons: fix messaggio finale
+2023-06-01T08:13:25.815Z |           1.0.10 | create-favicons: rimozione homedir dai path presenti nei messaggi
+2023-07-12T08:48:16.358Z |           1.0.11 | create-Favicons: parametro per la personalizzazione della qualità dei file PNG
+2023-09-17T15:14:01.301Z |           1.0.12 | favicon: new `snippet_target_file` parameter
+2024-02-28T16:57:28.850Z |            1.1.0 | Prima release as standalone package (from dev_utilities)

@@ -1,0 +1,16 @@
+/*
+  File di configurazione per `create-favicons`.
+
+  I valori indicati sono quelli di default.
+  Per avviare la generazione delle favicon digitare
+
+  npx create-favicons
+
+  dalla directory che contiene questo file.
+
+  Creazione favicons (senza installare il package nel progetto):
+  npx --package=@massimo-cassandro/create-favicons create-favicons (dalla dir corrente)
+
+  Altre info: https://github.com/massimo-cassandro/create-favicons
+
+*/
