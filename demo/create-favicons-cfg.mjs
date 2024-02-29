@@ -2,6 +2,7 @@ const params = {
 
   // immagine sorgent. SVG o PNG 512x512
   src_img: 'favicon-src.svg',
+  // src_img: 'favicon-src2.svg',
 
   // sorgente opzionale per immagine piccole (32px)
   small_src_img: 'favicon-small-src.svg',
@@ -52,9 +53,14 @@ const params = {
 
   // se true aggiunge allo snippet una query string per ovviare ad eventuali
   // problemi di caching del browser
-  add_cache_buster: true
+  add_cache_buster: true,
 
   //****************************************************************************
+
+  // SHARP PNG PARAMETERS
+  // parametri per i file PNG
+  // vedi https://sharp.pixelplumbing.com/api-output#png
+  png_parameters: {compressionLevel: 5, quality: 60, palette: true}
 };
 
 export default params;

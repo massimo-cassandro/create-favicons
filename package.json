@@ -1,6 +1,6 @@
 {
   "name": "@massimo-cassandro/create-favicons",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Favicon files builder",
   "bin": {
     "create-favicons": "./index.mjs"
@@ -14,7 +14,6 @@
   "publishConfig": {
     "access": "public"
   },
-
   "author": "Massimo Cassandro",
   "license": "MIT",
   "repository": {
@@ -43,14 +42,8 @@
   },
   "dependencies": {
     "chalk": "^5.3.0",
-    "imagemin": "^8.0.1",
-    "imagemin-jpegtran": "^7.0.0",
-    "imagemin-pngquant": "^9.0.2",
     "sharp": "^0.32.6",
-    "svgo": "^3.0.4",
+    "svgo": "^3.2.0",
     "to-ico": "^1.1.5"
-  },
-  "devDependencies": {
-    "@massimo-cassandro/linters-config": "^1.6.1"
   }
 }

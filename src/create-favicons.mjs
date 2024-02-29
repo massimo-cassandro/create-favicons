@@ -7,15 +7,14 @@ import chalk from 'chalk';
 import sharp from 'sharp';
 import toIco from 'to-ico';
 import { optimize } from 'svgo';
-import imagemin from 'imagemin';
-import imageminJpegtran from 'imagemin-jpegtran';
-import imageminPngquant from 'imagemin-pngquant';
 
 import { printFrame } from './print-frame.mjs';
 import { remove_homedir_string } from './remove-homedir-string.mjs';
 
 
 export function createFavicons(params) {
+
+  // const files = [];
 
   try {
 
@@ -27,6 +26,7 @@ export function createFavicons(params) {
 
 
     // https://sharp.pixelplumbing.com/api-constructor
+    // https://sharp.pixelplumbing.com/api-output#png
     Promise.all([
       ['apple-touch-icon.png', 180],
       ['icon-192.png', 192],
@@ -34,31 +34,16 @@ export function createFavicons(params) {
     ].map(size => {
       sharp(path.resolve(params.work_dir, params.src_img))
         .resize({ width: size[1], fit: 'inside' })
-        .png()
+        .png(params.png_parameters)
         // .then(info => console.log(info))
         // .toFile(`${output_dir}/${size[0]}`)
         .toBuffer()
         .then(bufferData => {
+          fs.writeFileSync(`${output_dir}/${size[0]}`, bufferData);
 
-          // ottimizzazione PNG / JPG
-          // https://github.com/imagemin/imagemin
-          // https://github.com/imagemin/imagemin-pngquant
-          // https://github.com/imagemin/imagemin-jpegtran
-          // https://web.dev/use-imagemin-to-compress-images/
-
-          imagemin.buffer(bufferData, {
-            plugins: [
-              imageminJpegtran(),
-              imageminPngquant({
-                quality: params.imagemin_png_quality,
-                dithering: false,
-                strip: true,
-                verbose: true
-              })
-            ]
-          }).then( result => {
-            fs.writeFileSync(`${output_dir}/${size[0]}`, result);
-          });
+          const stats = fs.statSync(`${output_dir}/${size[0]}`);
+          // console.log(`${size[0]}: ${(stats.size / 1024).toFixed(2)} kb`);
+          // files.push(`${size[0]}: ${(stats.size / 1024).toFixed(2)} kb`);
 
         })
         .catch(err => { throw err; });
@@ -186,12 +171,13 @@ export function createFavicons(params) {
         {string: ''},
         {string: 'I file generati sono nella directory:', color: 'green'},
         {string: remove_homedir_string(output_dir), color: 'yellow'},
+        // {string: ''},
+        // {string: '*' + files.join('\n'), color: 'yellow'},
         ...extra_strings
       ],
       frameColor: 'green',
       frameType: 'single'
     });
-
 
   } catch(err) {
 

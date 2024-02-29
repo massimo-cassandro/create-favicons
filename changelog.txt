@@ -12,3 +12,4 @@
 2023-07-12T08:48:16.358Z |           1.0.11 | create-Favicons: parametro per la personalizzazione della qualità dei file PNG
 2023-09-17T15:14:01.301Z |           1.0.12 | favicon: new `snippet_target_file` parameter
 2024-02-28T16:57:28.850Z |            1.1.0 | Prima release as standalone package (from dev_utilities)
+2024-02-29T16:00:00.800Z |            1.2.0 | Rimozione imagemin

@@ -27,7 +27,6 @@ export function printFrame(options) {
 
   options.strings = options.strings.map(item => {return {...string_defaults, ...item }; });
 
-  // TODO bold underline ecc...
   // aggiunta spazi sulle righe `bg`
   options.strings.forEach(item => {
     if(/^bg/.test(item.color)) {

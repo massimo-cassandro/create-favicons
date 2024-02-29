@@ -73,16 +73,12 @@ export const defaults = {
   // problemi di caching del browser
   add_cache_buster: false,
 
-
-  // IMAGEMIN PARAMETERS
   //****************************************************************************
+
+  // SHARP PNG PARAMETERS
   // parametri per i file PNG
-  // vedi https://www.npmjs.com/package/imagemin-pngquant
-  // Instructs pngquant to use the least amount of colors required to meet or
-  // exceed the max quality. If conversion results in quality below the min quality
-  // the image won't be saved.
-  // Min and max are numbers in range 0 (worst) to 1 (perfect), similar to JPEG.
-  imagemin_png_quality: [0.3, 0.6]
+  // vedi https://sharp.pixelplumbing.com/api-output#png
+  png_parameters: {compressionLevel: 5, quality: 60, palette: true}
 
 
   /*** INIT END ***/
