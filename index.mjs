@@ -9,12 +9,13 @@ import * as path from 'path';
 
 import chalk from 'chalk';
 
+import { parseParams } from './src/parse-params.mjs';
+import { default_params } from './src/default-params.mjs';
 import { createFavicons } from './src/create-favicons.mjs';
-import { defaults } from './src/defaults.mjs';
 import { init } from './src/init.mjs';
 
 // nome del file di configurazione, se utilizzato
-const cfg_filename = 'create-favicons-cfg.mjs';
+const config_filename = 'create-favicons-cfg.mjs';
 
 try {
 
@@ -25,39 +26,39 @@ try {
 
   } else {
 
-    let params = {};
+    let work_dir;
     const dir_param_idx = process.argv.findIndex(el => /^--dir/.test(el) );
 
     if(dir_param_idx !== -1) {
-      [, params.work_dir] = process.argv[dir_param_idx].split('=');
+      [, work_dir] = process.argv[dir_param_idx].split('=');
 
     } else {
-      params.work_dir = './';
+      work_dir = './';
     }
 
-    if(fs.existsSync(path.resolve(params.work_dir, cfg_filename))) {
+    work_dir = path.resolve(process.cwd(), work_dir) ;
 
-      import(path.resolve(params.work_dir, cfg_filename))
-        .then((custom_params) => {
 
-          if(Array.isArray(custom_params.default)) {
+    if(fs.existsSync(path.resolve(work_dir, config_filename))) {
 
-            custom_params.default.forEach(item => {
-              createFavicons({ ...defaults, ...params, ...item });
-            });
+      import(path.resolve(work_dir, config_filename))
+        .then((config_params) => {
 
-          } else {
-            createFavicons({ ...defaults, ...params, ...custom_params.default });
-          }
+          const imported_params = [...(Array.isArray(config_params.default)? config_params.default : [config_params.default])];
+
+          imported_params.forEach(params_item => {
+            createFavicons(parseParams(params_item, work_dir));
+          });
+
         });
 
-    } else if(fs.existsSync(path.resolve(params.work_dir, defaults.src_img))) {
+    } else if(default_params.src_img && fs.existsSync(path.resolve(work_dir, default_params.src_img))) {
 
-      createFavicons({...defaults, ...params});
+      createFavicons(parseParams(null, work_dir));
 
     } else {
 
-      throw `'${cfg_filename}' e '${defaults.src_img}' non presenti`;
+      throw new Error( `'${config_filename}' e '${defaults.src_img}' non presenti`);
     }
 
   }

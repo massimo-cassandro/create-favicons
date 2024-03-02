@@ -2,7 +2,11 @@
 
 Crea i file favicons come descritto in [How to Favicon in 2024](https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs).
 
-Utilizzo:
+I file da elaborare devono essere in formato SVG, mentre quelli generati sono in formato SVG (favicon), PNG (apple-touch-icon e altri file per android), e ICO (altro favicon per compatibilità con i browser meno recenti). Vengono inoltre genrati i file `manifest.webmanifest` e uno snippet html, opzionale, con i tag `link` per l'inserimento degli elementi generati.
+
+Le immagini sono generate con [Sharp](https://sharp.pixelplumbing.com/), [SVGO](https://github.com/svg/svgo) e [sharp-ico](https://github.com/ssnangua/sharp-ico).
+
+## Utilizzo
 
 ```bash
 npx create-favicons [--dir=./path/to/dir]
@@ -32,7 +36,7 @@ const params = [{ /* ... */ }];
 export default params;
 ```
 
-`params` può essere un ogetto o un array. In quest'ultimo caso, ogni elemento dell'array corrisponde ad un diverso set di favicons.
+`params` può essere un oggetto o un array. In quest'ultimo caso, ogni elemento dell'array corrisponde ad un diverso set di favicons.
 
 Per creare un file di cfg di esempio **nella directory corrente** (con tutti i valori di default e la loro descrizione), 
 utilizzare il comando:

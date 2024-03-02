@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 import chalk from 'chalk';
 
+// https://github.com/chalk/chalk
 export function printFrame(options) {
 
   /*

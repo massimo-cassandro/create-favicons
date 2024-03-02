@@ -1,4 +1,4 @@
-export const defaults = {
+export const default_params = {
 
   // delimitazione porzione da copiare nel file init
   /*** INIT START ***/

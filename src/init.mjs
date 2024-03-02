@@ -22,7 +22,7 @@ export function init() {
 
   const start_string = '/*** INIT START ***/',
     end_string = '/*** INIT END ***/',
-    init_start_text = fs.readFileSync(src_dir +'./init-start.txt', 'utf8');
+    init_start_text = fs.readFileSync(src_dir +'./init-start-text.txt', 'utf8');
 
 
 
