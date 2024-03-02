@@ -14,3 +14,4 @@
 2024-02-28T16:57:28.850Z |            1.1.0 | Prima release as standalone package (from dev_utilities)
 2024-02-29T16:00:00.800Z |            1.2.0 | Rimozione imagemin
 2024-03-02T13:41:19.527Z |            1.3.0 | Sostituito `to-ico` con `sharp.ico`. Refactoring
+2024-03-02T13:55:19.527Z |            1.3.1 | `.ico` link tag fix

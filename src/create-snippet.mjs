@@ -11,7 +11,7 @@ export async function createSnippet(params) {
         .replace('%_cache_buster_%', cache_buster);
 
 
-    let snippet_content = `<link rel="icon" href="${create_href('favicon.ico')}" sizes="any">\n` +
+    let snippet_content = `<link rel="icon" href="${create_href('favicon.ico')}" sizes="32x32">\n` +
       `<link rel="icon" href="${create_href('favicon.svg')}" type="image/svg+xml">\n` +
       `<link rel="apple-touch-icon" href="${create_href('apple-touch-icon.png')}">\n` +
       `<link rel="manifest" href="${create_href('manifest.webmanifest')}">`;
