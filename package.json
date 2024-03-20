@@ -1,14 +1,13 @@
 {
   "name": "@massimo-cassandro/create-favicons",
-  "version": "1.3.1",
+  "version": "1.3.4",
   "description": "Favicon files builder",
   "bin": {
     "create-favicons": "./index.mjs"
   },
   "type": "module",
   "scripts": {
-    "update-version": "node ./src/update-version/index.mjs",
-    "upd@m": "node ./src/upd@m/index.mjs",
+    "update-version": "npx update-version",
     "npm-publish": "npm publish"
   },
   "publishConfig": {
@@ -24,14 +23,6 @@
     "url": "https://github.com/massimo-cassandro/create-favicons/issues"
   },
   "homepage": "https://github.com/massimo-cassandro/create-favicons/tree/main#readme",
-  "eslintConfig": {
-    "extends": [
-      "./node_modules/@massimo-cassandro/linters-config/eslintrc.js"
-    ]
-  },
-  "stylelint": {
-    "extends": "@massimo-cassandro/linters-config/stylelintrc.js"
-  },
   "files": [
     "src/**/*",
     "index.mjs"
@@ -45,5 +36,8 @@
     "sharp": "^0.33.2",
     "sharp-ico": "^0.1.5",
     "svgo": "^3.2.0"
+  },
+  "devDependencies": {
+    "@massimo-cassandro/dev-updater": "^1.0.0"
   }
 }

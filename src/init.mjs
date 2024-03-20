@@ -18,7 +18,7 @@ export function init() {
   }
 
 
-  let default_params = fs.readFileSync(src_dir + './defaults.mjs', 'UTF8');
+  let default_params = fs.readFileSync(src_dir + './default-params.mjs', 'UTF8');
 
   const start_string = '/*** INIT START ***/',
     end_string = '/*** INIT END ***/',

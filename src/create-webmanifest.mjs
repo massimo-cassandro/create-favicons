@@ -9,6 +9,6 @@ export async function createWebmanifest(params) {
     ...(params.webmanifest_extra?? {})
   };
 
-  fs.writeFile(`${params.output_dir}/manifest.webmanifest`, JSON.stringify(manifest, null, ' '));
+  await fs.writeFile(`${params.output_dir}/manifest.webmanifest`, JSON.stringify(manifest, null, ' '));
 
 }

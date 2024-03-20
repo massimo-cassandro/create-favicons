@@ -5,7 +5,7 @@ import ico from 'sharp-ico';
 
 export async function createIco(params) {
 
-  ico.sharpsToIco(
+  await ico.sharpsToIco(
     [sharp(params.small_src_img?? params.src_img)],
     `${params.output_dir}/favicon.ico`,
     {

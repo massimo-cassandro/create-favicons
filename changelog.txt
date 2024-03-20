@@ -15,3 +15,6 @@
 2024-02-29T16:00:00.800Z |            1.2.0 | Rimozione imagemin
 2024-03-02T13:41:19.527Z |            1.3.0 | Sostituito `to-ico` con `sharp.ico`. Refactoring
 2024-03-02T13:55:19.527Z |            1.3.1 | `.ico` link tag fix
+2024-03-10T18:08:04.729Z |            1.3.2 | Fix
+2024-03-10T18:40:55.123Z |            1.3.3 | Fix
+2024-03-20T21:03:24.714Z |            1.3.4 | Fix

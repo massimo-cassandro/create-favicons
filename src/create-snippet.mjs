@@ -11,13 +11,13 @@ export async function createSnippet(params) {
         .replace('%_cache_buster_%', cache_buster);
 
 
-    let snippet_content = `<link rel="icon" href="${create_href('favicon.ico')}" sizes="32x32">\n` +
-      `<link rel="icon" href="${create_href('favicon.svg')}" type="image/svg+xml">\n` +
-      `<link rel="apple-touch-icon" href="${create_href('apple-touch-icon.png')}">\n` +
-      `<link rel="manifest" href="${create_href('manifest.webmanifest')}">`;
+    let snippet_content = `<link rel="icon" href="${create_href('favicon.ico')}" sizes="32x32"/>` +
+      `<link rel="icon" href="${create_href('favicon.svg')}" type="image/svg+xml"/>` +
+      `<link rel="apple-touch-icon" href="${create_href('apple-touch-icon.png')}"/>` +
+      `<link rel="manifest" href="${create_href('manifest.webmanifest')}"/>`;
 
     if (params.snippet_language === 'pug') {
-      snippet_content = snippet_content.replace(/<link (.*?)>/g, 'link($1)');
+      snippet_content = snippet_content.replace(/<link (.*?)\/?>/g, 'link($1)');
     }
 
     snippet_content = params.snippet_template.replace('%_link_tags_%', snippet_content);

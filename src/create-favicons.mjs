@@ -12,13 +12,13 @@ import { createSnippet } from './create-snippet.mjs';
 import { printResult } from './print-result.mjs';
 
 
-export function createFavicons(params) {
+export async function createFavicons(params) {
 
   try {
 
     console.error(chalk.green('Creating favicons...'));
 
-    Promise.all([
+    await Promise.all([
       createSvg(params),
       createPng(params),
       createIco(params),

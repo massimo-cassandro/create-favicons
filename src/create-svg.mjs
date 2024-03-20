@@ -4,7 +4,7 @@ import * as fs from 'fs/promises';
 export async function createSvg(params) {
 
   // TODO add extra config ???
-  fs.readFile(params.small_src_img?? params.src_img, { encoding: 'utf8' })
+  await fs.readFile(params.small_src_img?? params.src_img, { encoding: 'utf8' })
     .then(svgString => {
 
       const svg_result = optimize(svgString, { multipass: true});

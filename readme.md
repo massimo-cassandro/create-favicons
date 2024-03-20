@@ -26,7 +26,7 @@ Il formato migliore per i file sorgenti è SVG, o in alternativa PNG.
 
 In assenza di entrambi i file viene restituito un errore.
 
-I parametri di default sono elencati in dettaglio nel file `src/create-favicons/src/defaults.mjs`, 
+I parametri di default sono elencati in dettaglio nel file `src/create-favicons/src/default-params.mjs`, 
 e possono essere personalizzati nel file di configurazione, che deve avere questa forma: 
 
 ```javascript

@@ -8,6 +8,10 @@
 
   dalla directory che contiene questo file.
 
+  (o `npx create-favicons  --dir=./path/to/config/dir` dalla root del progetto)
+
+  TUTTI I PERCORSI DALLA DIRECTORY CHE CONTIENE IL FILE DI CONFIGURAZIONE
+
   Creazione favicons (senza installare il package nel progetto):
   npx --package=@massimo-cassandro/create-favicons create-favicons (dalla dir corrente)
 

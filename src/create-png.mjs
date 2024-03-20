@@ -4,7 +4,7 @@ export async function createPng(params) {
 
   // https://sharp.pixelplumbing.com/api-constructor
   // https://sharp.pixelplumbing.com/api-output#png
-  Promise.all([
+  await Promise.all([
     ['apple-touch-icon.png', 180],
     ['icon-192.png', 192],
     ['icon-512.png', 512]
