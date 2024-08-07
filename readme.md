@@ -6,6 +6,14 @@ I file da elaborare devono essere in formato SVG, mentre quelli generati sono in
 
 Le immagini sono generate con [Sharp](https://sharp.pixelplumbing.com/), [SVGO](https://github.com/svg/svgo) e [sharp-ico](https://github.com/ssnangua/sharp-ico).
 
+
+## Creazione template file di config (vedi più avanti)
+
+```bash
+npx create-favicons init
+```
+
+
 ## Utilizzo
 
 ```bash
