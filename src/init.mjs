@@ -42,6 +42,7 @@ export function init() {
 
   printFrame({
     strings: [
+      {string: '** CREATE-FAVICONS **', color: 'yellow', bold: true,},
       {string: 'File di configurazione di generato:', color: 'green'},
       {string: remove_homedir_string(cfg_sample_file), color: 'bgGreen'},
     ],
