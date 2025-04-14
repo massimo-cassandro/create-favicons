@@ -58,7 +58,7 @@ try {
 
     } else {
 
-      throw new Error( `'${config_filename}' e '${defaults.src_img}' non presenti`);
+      throw new Error( `'${config_filename}' e '${default_params.src_img}' non presenti`);
     }
 
   }

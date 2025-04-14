@@ -96,3 +96,4 @@ File generati:
 ```
 
 Vedi anche esempio in <https://github.com/massimo-cassandro/dev-utilities/tree/main/test/test/create-favicons-test>.
+
