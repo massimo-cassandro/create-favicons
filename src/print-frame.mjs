@@ -1,7 +1,12 @@
 /* eslint-disable no-console */
-import chalk from 'chalk';
 
-// https://github.com/chalk/chalk
+// https://nodejs.org/api/util.html#utilstyletextformat-text-options
+import { styleText } from 'node:util';
+
+export function log(color, string, mode='log') {
+  console[mode]( styleText(color, string) );
+}
+
 export function printFrame(options) {
 
   /*
@@ -37,15 +42,15 @@ export function printFrame(options) {
 
   const total_length = Math.max( ...(options.strings.map(item => item.string.length)) ) + 2;
 
-  console.log( chalk[options.frameColor]( `\n${frames_elements[0]}` + frames_elements[4].repeat(total_length) + frames_elements[1]) );
+  log( options.frameColor, `\n${frames_elements[0]}` + frames_elements[4].repeat(total_length) + frames_elements[1] );
 
   options.strings.forEach(item => {
     console.log(
-      chalk[options.frameColor](`${frames_elements[5]} `) +
-      chalk[item.color](item.string)  + ' '.repeat(total_length - item.string.length - 2) +
-      chalk[options.frameColor](` ${frames_elements[5]}`)
+      styleText(options.frameColor, `${frames_elements[5]} `) +
+      styleText(item.color, item.string)  + ' '.repeat(total_length - item.string.length - 2) +
+      styleText(options.frameColor, ` ${frames_elements[5]}`)
     );
   });
 
-  console.log( chalk[options.frameColor]( frames_elements[2] + frames_elements[4].repeat(total_length) + `${frames_elements[3]}\n` ) );
+  log(options.frameColor, frames_elements[2] + frames_elements[4].repeat(total_length) + `${frames_elements[3]}\n` );
 }

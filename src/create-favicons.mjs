@@ -2,7 +2,7 @@
 
 // import * as fs from 'fs';
 // import * as path from 'path';
-import chalk from 'chalk';
+import { log } from './print-frame.mjs';
 
 import { createIco } from './create-ico.mjs';
 import { createPng } from './create-png.mjs';
@@ -16,7 +16,7 @@ export async function createFavicons(params) {
 
   try {
 
-    console.error(chalk.green('Creating favicons...'));
+    log('green', 'Creating favicons...');
 
     await Promise.all([
       createSvg(params),
@@ -31,7 +31,7 @@ export async function createFavicons(params) {
       })
 
   } catch(err) {
-    console.error(chalk.bgRed(` ${err} `));
+    log('bgRed', ` ${err} `, 'error');
   }
 
 }

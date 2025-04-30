@@ -3,7 +3,6 @@ import { remove_homedir_string } from './remove-homedir-string.mjs';
 import * as fs from 'fs';
 
 
-// https://github.com/chalk/chalk
 export function printResult(params) {
 
   function printSize(size) {

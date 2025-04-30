@@ -7,7 +7,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 
-import chalk from 'chalk';
+import { log } from './src/print-frame.mjs';
 
 import { parseParams } from './src/parse-params.mjs';
 import { default_params } from './src/default-params.mjs';
@@ -66,5 +66,5 @@ try {
 
 
 } catch(err) {
-  console.error(chalk.bgRed(`\n ${err} \n`));
+  log('bgRed', `\n ${err} \n`, 'error');
 }
