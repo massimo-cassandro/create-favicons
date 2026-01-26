@@ -24,7 +24,7 @@ export function printResult(params) {
     'favicon.svg',
     'icon-192.png',
     'icon-512.png',
-    'manifest.webmanifest'
+    params.manifest_file_name
   ].forEach(item => {
     const stats = fs.statSync(`${params.output_dir}/${item}`);
     extra_strings.push({string: `${item}: ${printSize(stats.size)}`, color: 'greenBright'});

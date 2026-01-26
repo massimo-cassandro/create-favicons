@@ -13,7 +13,7 @@ export const default_params = {
 
   // directory output (percorso relativo alla dir di lavoro)
   // se la dir non esiste, viene creata
-  output_dir: 'favicons-output',
+  output_dir: './output',
 
 
   // WEBMANIFEST
@@ -30,12 +30,17 @@ export const default_params = {
   // }
   webmanifest_extra: null,
 
+  // if true, all files linked in manifest will end with
+  // '?_=[hash]'
+  webmanifest_add_hash_to_files: true,
+
 
   // SNIPPET
   //****************************************************************************
 
   // nome del file snippet, compresa l'estensione
   // se questo parametro è null e anche `snippet_target_file` lo è, lo snippet non viene generato
+  // se il linguaggio è ejs il nome è sempre 'favicons.incl.ejs' e snippet_name viene ignorato
   snippet_name: 'favicon.html',
 
   // path (relativo a questo file) in cui salvare lo snippet
@@ -54,8 +59,8 @@ export const default_params = {
   snippet_target_file: null,
 
   // linguaggio da utilizzare per la sintassi dello snippet html
-  // html o pug
-  snippet_language: 'html',
+  // html, pug, ejs
+  snippet_language: 'ejs',
 
   // template per la costruzione dello snippet.
   // si tratta di una stringa (anche su più righe) in cui deve essere presente

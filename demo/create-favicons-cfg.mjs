@@ -8,7 +8,7 @@ const params = {
   small_src_img: 'favicon-small-src.svg',
 
   // directory output (percorso relatuvo alla dir di lavoro)
-  output_dir: './favicons-output',
+  output_dir: './output',
 
   // chiavi aggiuntive per webmanifest, normalmente non necessarie per il browser
   //esempio:
@@ -32,11 +32,11 @@ const params = {
 
   // path (relativo a questo file) in cui salvare lo snippet
   // se null, viene utilizzato lo stesso percorso indicato in `output_dir`
-  snippet_path: './snippet-output',
+  snippet_path: null,
 
   // linguaggio da utilizzare per la sintassi dello snippet html
   // html o pug
-  snippet_language: 'html',
+  snippet_language: 'ejs',
 
   // template per la costruzione dello snippet.
   // si tratta di una stringa (anche su più righe) in cui deve essere presente

@@ -14,16 +14,21 @@ import { printResult } from './print-result.mjs';
 
 export async function createFavicons(params) {
 
+  if(params.snippet_language === 'ejs') {
+    params.manifest_file_name = 'manifest.webmanifest.ejs';
+    params.webmanifest_add_hash_to_files = false;
+  }
+
   try {
 
     log('green', 'Creating favicons...');
 
     await Promise.all([
-      createSvg(params),
-      createPng(params),
-      createIco(params),
-      createWebmanifest(params),
-      createSnippet(params),
+      await createSvg(params),
+      await createPng(params),
+      await createIco(params),
+      await createWebmanifest(params), // after create png
+      await createSnippet(params),
     ])
       .then(result => {
         printResult(params);
