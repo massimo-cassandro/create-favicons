@@ -1,6 +1,6 @@
 {
   "name": "@massimo-cassandro/create-favicons",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "description": "Favicon files builder",
   "bin": {
     "create-favicons": "./index.mjs"

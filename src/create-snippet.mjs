@@ -54,7 +54,7 @@ export async function createSnippet(params) {
     } else {
 
       fs.promises.writeFile(
-        `${params.snippet_path}/${params.snippet_language === 'ejs'? 'favicons.incl.ejs' : params.snippet_name}`,
+        `${params.snippet_path}/${params.snippet_name}`,
         snippet_content
       );
 

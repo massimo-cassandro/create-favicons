@@ -14,11 +14,6 @@ import { printResult } from './print-result.mjs';
 
 export async function createFavicons(params) {
 
-  if(params.snippet_language === 'ejs') {
-    params.manifest_file_name = 'manifest.webmanifest.ejs';
-    params.webmanifest_add_hash_to_files = false;
-  }
-
   try {
 
     log('green', 'Creating favicons...');
