@@ -9,6 +9,18 @@ export function parseParams(config_params = null, work_dir = process.cwd()) {
     const params = {...default_params, ...(config_params??{})}
     params.work_dir = work_dir;
 
+    // ejs overrides
+    if(params.snippet_language === 'ejs') {
+      params.manifest_file_name = 'manifest.webmanifest.ejs';
+      params.webmanifest_add_hash_to_files = false;
+      params.create_snippet = true;
+      params.snippet_name = 'favicons.incl.ejs';
+      params.snippet_target_file = null;
+      params.snippet_path = params.output_dir;
+      params.add_cache_buster = false;
+
+
+    }
     [
       'src_img',
       'small_src_img',
@@ -38,16 +50,6 @@ export function parseParams(config_params = null, work_dir = process.cwd()) {
       params.snippet_language = params.snippet_language.toLowerCase();
     }
 
-    // ejs overrides
-    if(params.snippet_language === 'ejs') {
-      params.manifest_file_name = 'manifest.webmanifest.ejs';
-      params.webmanifest_add_hash_to_files = false;
-      params.create_snippet = true;
-      params.snippet_name = 'favicons.incl.ejs';
-      params.snippet_target_file = null;
-      params.snippet_path = null;
-      params.add_cache_buster = false;
-    }
 
 
     return params;
