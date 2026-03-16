@@ -35,7 +35,7 @@ const params = {
   snippet_path: null,
 
   // linguaggio da utilizzare per la sintassi dello snippet html
-  // html o pug
+  // html o pug o ejs
   snippet_language: 'ejs',
 
   // template per la costruzione dello snippet.

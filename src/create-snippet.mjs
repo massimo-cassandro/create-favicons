@@ -12,8 +12,9 @@ export async function createSnippet(params) {
       snippet_content = '<link rel="icon" href="<%= require(\'./favicon.ico\') %>" sizes="32x32"/>\n' +
         '<link rel="icon" href="<%= require(\'./favicon.svg\') %>" type="image/svg+xml"/>\n' +
         '<link rel="apple-touch-icon" href="<%= require(\'./apple-touch-icon.png\') %>"/>\n' +
-        '<link rel="manifest" href="./manifest.webmanifest"/>\n' +
-        '<!-- <link rel="manifest" href="<%= require(\'./manifest.webmanifest.ejs\')() %>"/> -->';
+        '<link rel="manifest" href="./manifest.webmanifest"/>';
+
+        //'\n<!-- <link rel="manifest" href="<%= require(\'./manifest.webmanifest.ejs\')() %>"/> -->';
 
     } else {
 

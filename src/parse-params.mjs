@@ -8,6 +8,7 @@ export function parseParams(config_params = null, work_dir = process.cwd()) {
 
     const params = {...default_params, ...(config_params??{})}
     params.work_dir = work_dir;
+    params.manifest_file_name = 'manifest.webmanifest';
 
     // ejs overrides
     if(params.snippet_language === 'ejs') {
@@ -17,8 +18,7 @@ export function parseParams(config_params = null, work_dir = process.cwd()) {
       params.snippet_name = 'favicons.incl.ejs';
       params.snippet_target_file = null;
       params.snippet_path = params.output_dir;
-      params.add_cache_buster = false;
-
+      params.add_cache_buster = false
 
     }
     [
